@@ -12,9 +12,10 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
 
         var button = findViewById<Button>(R.id.button)
-
         button.setOnClickListener {
             Toast.makeText(this@MainActivity, "" + (it as Button).text, Toast.LENGTH_SHORT).show()
         }
+        HookHelper.hookClickListener(button)
+
     }
 }
